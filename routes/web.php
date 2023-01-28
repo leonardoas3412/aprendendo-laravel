@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/user/{user}', [App\Http\Controllers\UserController::class, 'show']);
+Route::get('/user', [App\Http\Controllers\UserController::class, 'show']);
 
 Route::get('/users', function(){
     return 'Leo';
