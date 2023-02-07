@@ -25,7 +25,7 @@ Route::get('/users/{id}', function($id){
 Route::get('/users/{id}/tags', function($id){
     return 'Leo'.$id.' tags';
 });
-
+Route::get('/business', [\App\Http\Controllers\BusinessController::class, 'index']);
 Route::get('/', function () {
     return view('welcome');
 });
