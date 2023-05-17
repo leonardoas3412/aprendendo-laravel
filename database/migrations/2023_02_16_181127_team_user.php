@@ -13,8 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user', function (Blueprint $table) {
+        Schema::create('team_user', function (Blueprint $table) {
             $table->id();
+            $table->foreignId(column:'user_id')
+            ->contrained()
+            ->onDelete(action:'CASCADE')
+            ->onUpdate(action:'CASCADE');
+            $table->foreignId(column:'team_id')
+            ->contrained()
+            ->onDelete(action:'CASCADE')
+            ->onUpdate(action:'CASCADE');
             $table->timestamps();
         });
     }
@@ -26,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user');
+        Schema::dropIfExists('team_user');
     }
 };

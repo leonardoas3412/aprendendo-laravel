@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/user', [App\Http\Controllers\UserController::class, 'show']);
+Route::get('/user/{user}', [App\Http\Controllers\UserController::class, 'show']);
+
+Route::get('/post', [App\Http\Controllers\postController::class, 'index']);
+Route::get('/post/{post}', [App\Http\Controllers\postController::class, 'show']);
 
 Route::get('/users', function(){
     return 'Leo';

@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('post', function (Blueprint $table) {
-            $table->string(column:'cover')->nullable()->after(column:'title');
+        Schema::create('teams', function (Blueprint $table) {
+            $table->id();
+            $table->string(column:'nome');
+            $table->timestamps();
         });
+
     }
 
     /**
@@ -25,8 +28,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('post', function (Blueprint $table) {
-            $table->dropcolumn(column:'cover');
-        });
+        Schema::dropIfExists('teams');
+     
     }
 };
